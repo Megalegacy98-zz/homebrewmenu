@@ -1,3 +1,6 @@
+topscreenimg = Screen.loadImage("/themes/top.png")
+bottomscreenimg = Screen.loadImage("/themes/bottom.png")
+bgmusic = Sound.openWav("/bgmusic.wav",false)
 user = System.getUsername() 
 while true do
 pad = Controls.read()
