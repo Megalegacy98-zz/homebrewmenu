@@ -1,6 +1,9 @@
 # homebrewmenu
 Simple 3DS homebrew menu made from Lua-Player-Plus 3DS.
 
+# Requirements
+1. Some sort of (userland) exploit to actually run it.
+
 # How to use
 Download all of the scripts and homebrewmenu.3dsx.
 
