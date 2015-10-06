@@ -23,18 +23,22 @@ end
 Screen.waitVblankStart()
 Screen.refresh()
 Screen.clear(TOP_SCREEN)
-lol = {unselect,unselect,unselect,unselect}
+lol = {unselect,unselect,unselect,unselect,unselect}
 lol[y] = selected
 Screen.debugPrint(45,0, .. user .. "'s Homebrew Menu v 0.1a",unselect,TOP_SCREEN)
 Screen.debugPrint(45,30,"Load Game Cartridge",lol[1],TOP_SCREEN)
 Screen.debugPrint(45,45,"Load Homebrew",lol[2],TOP_SCREEN)
 Screen.debugPrint(45,60,"Reboot System",lol[3],TOP_SCREEN)
-Screen.debugPrint(45,75,"Exit",lol[4],TOP_SCREEN)
+Screen.debugPrint(45,75,"See system details",lol[4],TOP_SCREEN)
+Screen.debugPrint(45,90,"Exit",lol[5],TOP_SCREEN)
 Screen.flip()
 
 if homebrew == 1 then
 dofile(System.currentDirectory().."/homebrew.lua")
 end
+
+if sysdetailmenu == 1 then
+dofile(System.currentDirectory().."/sysdetails.lua")  
 
 if gamecard == 1 then
 dofile(System.currentDirectory().."/gamecard.lua")
@@ -53,6 +57,9 @@ System.reboot()
 end
 
 if (Controls.check(pad,KEY_A)) and not (Controls.check(oldpad,KEY_A)) and y == 4 then
+sysdetailmenu = 1
+
+if (Controls.check(pad,KEY_A)) and not (Controls.check(oldpad,KEY_A)) and y == 5 then
 Sound.term()
 System.exit()
 end
