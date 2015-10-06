@@ -1,10 +1,10 @@
 while true do
 pad = Controls.read()
 
-if (Controls.check(pad, KEY_Y)) and not (Controls.check(oldpad, KEY_Y)) then
+--[[if (Controls.check(pad, KEY_Y)) and not (Controls.check(oldpad, KEY_Y)) then
 System.takeScreenshot(System.currentDirectory().. number .. ".jpg", false)
 number = number + 1
-end
+end--]]
 
 if (Controls.check(pad,KEY_DUP)) and not (Controls.check(oldpad,KEY_DUP)) then
 y = y - 1
