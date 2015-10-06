@@ -1,4 +1,3 @@
-y = 0
 while true do
 	Screen.refresh()
 	Screen.waitVblankStart()
