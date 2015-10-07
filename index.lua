@@ -14,15 +14,18 @@ oldpad = Controls.read()
 
 while true do
 pad = Controls.read()
+
 if (Controls.check(pad,KEY_DUP)) and not (Controls.check(oldpad,KEY_DUP)) then
 y = y - 1
 end
+
 if (Controls.check(pad,KEY_DDOWN)) and not (Controls.check(oldpad,KEY_DDOWN)) then
 y = y + 1
 end
 if maxy < y then
 y = 1
 end
+
 if y <= 0 then
 y = maxy
 end
