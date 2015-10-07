@@ -2,12 +2,14 @@ Sound.init()
 topscreenimg = Screen.loadImage("/theme/top.png")
 bottomscreenimg = Screen.loadImage("/theme/bottom.png")
 bgmusic = Sound.openWav("/theme/bgmusic.wav",false)
+homebrew = 0
+gamecard = 0
 themes = 0
 maxy = 6
 y = 1
 selected = Color.new(255,255,0)
 unselect = Color.new(0,255,255)
-
+oldpad = Controls.read()
 while true do
 pad = Controls.read()
 if (Controls.check(pad,KEY_DUP)) and not (Controls.check(oldpad,KEY_DUP)) then
