@@ -2,6 +2,7 @@ Sound.init()
 topscreenimg = Screen.loadImage("/theme/top.png")
 bottomscreenimg = Screen.loadImage("/theme/bottom.png")
 bgmusic = Sound.openWav("/theme/bgmusic.wav",false)
+sysdetailmenu = 0
 homebrew = 0
 gamecard = 0
 themes = 0
@@ -10,6 +11,7 @@ y = 1
 selected = Color.new(255,255,0)
 unselect = Color.new(0,255,255)
 oldpad = Controls.read()
+
 while true do
 pad = Controls.read()
 if (Controls.check(pad,KEY_DUP)) and not (Controls.check(oldpad,KEY_DUP)) then
@@ -39,19 +41,6 @@ Screen.debugPrint(45,90,"Toggle themes",lol[5],TOP_SCREEN)
 Screen.debugPrint(45,105,"Exit",lol[6],TOP_SCREEN)
 Screen.flip()
 
-if themes == 0 then
-  if Sound.isPlaying(bgmusic) then
-    Sound.close(bgmusic)
-  end
-Screen.clear(TOP_SCREEN)
-Screen.clear(BOTTOM_SCREEN)
-end
-
-if themes == 1 then
-Screen.drawImage(0,0,topscreenimg,TOP_SCREEN)  
-Screen.drawImage(0,0,bottomscreenimg,BOTTOM_SCREEN)
-Sound.play(bgmusic,LOOP,0x09)
-end
   
 if homebrew == 1 then
 dofile(System.currentDirectory().."/homebrew.lua")
@@ -63,6 +52,20 @@ end
 
 if gamecard == 1 then
 dofile(System.currentDirectory().."/gamecard.lua")
+end
+
+if themes == 1 then
+  if Sound.isPlaying(bgmusic) then
+    Sound.close(bgmusic)
+  end
+Screen.clear(TOP_SCREEN)
+Screen.clear(BOTTOM_SCREEN)
+end
+
+if themes == 2 then
+Screen.drawImage(0,0,topscreenimg,TOP_SCREEN)  
+Screen.drawImage(0,0,bottomscreenimg,BOTTOM_SCREEN)
+Sound.play(bgmusic,LOOP,0x09)
 end
 
 if (Controls.check(pad,KEY_A)) and not (Controls.check(oldpad,KEY_A)) and y == 1 then
@@ -82,9 +85,9 @@ sysdetailmenu = 1
 end
 
 if (Controls.check(pad,KEY_A)) and not (Controls.check(oldpad,KEY_A)) and y == 5 then
-themes = 1
+themes = 2
 else
-themes = 0
+themes = 1
 end
 
 if (Controls.check(pad,KEY_A)) and not (Controls.check(oldpad,KEY_A)) and y == 6 then
