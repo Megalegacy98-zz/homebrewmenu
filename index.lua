@@ -1,16 +1,15 @@
+Sound.init()
 topscreenimg = Screen.loadImage("/theme/top.png")
 bottomscreenimg = Screen.loadImage("/theme/bottom.png")
 bgmusic = Sound.openWav("/theme/bgmusic.wav",false)
 themes = 0
-user = System.getUsername() 
+maxy = 6
+y = 1
+selected = Color.new(255,255,0)
+unselect = Color.new(0,255,255)
+
 while true do
 pad = Controls.read()
-
---[[if (Controls.check(pad, KEY_Y)) and not (Controls.check(oldpad, KEY_Y)) then
-System.takeScreenshot(System.currentDirectory().. number .. ".jpg", false)
-number = number + 1
-end--]]
-
 if (Controls.check(pad,KEY_DUP)) and not (Controls.check(oldpad,KEY_DUP)) then
 y = y - 1
 end
@@ -21,7 +20,7 @@ if maxy < y then
 y = 1
 end
 if y <= 0 then
-y = 4
+y = maxy
 end
 
 Screen.waitVblankStart()
@@ -29,7 +28,7 @@ Screen.refresh()
 Screen.clear(TOP_SCREEN)
 lol = {unselect,unselect,unselect,unselect,unselect,unselect}
 lol[y] = selected
-Screen.debugPrint(45,0, user "'s Homebrew Menu v 0.1a",unselect,TOP_SCREEN)
+Screen.debugPrint(45,0, "Homebrew Menu v 0.1a",unselect,TOP_SCREEN)
 Screen.debugPrint(45,30,"Load Game Cartridge",lol[1],TOP_SCREEN)
 Screen.debugPrint(45,45,"Load Homebrew",lol[2],TOP_SCREEN)
 Screen.debugPrint(45,60,"Reboot System",lol[3],TOP_SCREEN)
