@@ -29,7 +29,7 @@ Screen.refresh()
 Screen.clear(TOP_SCREEN)
 lol = {unselect,unselect,unselect,unselect,unselect,unselect}
 lol[y] = selected
-Screen.debugPrint(45,0, .. user .. "'s Homebrew Menu v 0.1a",unselect,TOP_SCREEN)
+Screen.debugPrint(45,0, user .. "'s Homebrew Menu v 0.1a",unselect,TOP_SCREEN)
 Screen.debugPrint(45,30,"Load Game Cartridge",lol[1],TOP_SCREEN)
 Screen.debugPrint(45,45,"Load Homebrew",lol[2],TOP_SCREEN)
 Screen.debugPrint(45,60,"Reboot System",lol[3],TOP_SCREEN)
