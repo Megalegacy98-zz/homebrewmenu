@@ -1,5 +1,5 @@
 # homebrewmenu
-Simple 3DS homebrew menu made from Lua-Player-Plus 3DS.
+Simple 3DS homebrew menu made with Lua-Player-Plus 3DS.
 
 # Requirements
 1. Some sort of (userland) exploit to actually run it.
