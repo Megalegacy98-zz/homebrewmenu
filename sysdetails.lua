@@ -1,7 +1,7 @@
 firmware = System.getFirmware()
 region = System.getRegion()
 kernel = System.getKernel()
-model = System.getModel() [0 = Nintendo 3DS, 1 = Nintendo 3DS XL, 2 = New 3DS, 3 = Nintendo 2DS, 4 = New Nintendo 3DS XL]
+model = System.getModel() 
 language = System.getLanguage()
 color = Color.new(255,135,255)
 pad = Controls.read()
