@@ -1,13 +1,10 @@
 Sound.init()
 username = System.getUsername()
-topscreenimg = Screen.loadImage("/theme/top.png")
-bottomscreenimg = Screen.loadImage("/theme/bottom.png")
-bgmusic = Sound.openWav("/theme/bgmusic.wav",false)
 sysdetailmenu = 0
 homebrew = 0
 gamecard = 0
 themes = 0
-maxy = 6
+maxy = 5
 y = 1
 selected = Color.new(255,255,0)
 unselect = Color.new(0,255,255)
@@ -56,20 +53,6 @@ end
 
 if gamecard == 1 then
   dofile(System.currentDirectory().."/gamecard.lua")
-end
-
-if themes == 1 then
-  if Sound.isPlaying(bgmusic) then
-    Sound.close(bgmusic)
-  end
-  Screen.clear(TOP_SCREEN)
-  Screen.clear(BOTTOM_SCREEN)
-end
-
-if themes == 2 then
-  Screen.drawImage(0,0,topscreenimg,TOP_SCREEN)  
-  Screen.drawImage(0,0,bottomscreenimg,BOTTOM_SCREEN)
-  Sound.play(bgmusic,LOOP,0x09)
 end
 
 if (Controls.check(pad,KEY_A)) and not (Controls.check(oldpad,KEY_A)) and y == 1 then
