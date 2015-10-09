@@ -13,7 +13,7 @@ Screen.debugPrint(0,45,"Your kernel version: " .. kernel .. ".", color,TOP_SCREE
 Screen.debugPrint(0,60,"Your system model: " .. model .. ".", color,TOP_SCREEN)
 Screen.debugPrint(0,75,"The language on your 3DS is: " .. language .. ".", color,TOP_SCREEN)
 Screen.debugPrint(0,125,"Press B to exit.", color,TOP_SCREEN)
-  if (Controls.check(pad,KEY_B))
+  if (Controls.check(pad,KEY_B)) then
   dofile(System.currentDirectory() .. "/index.lua")
   end
 end
