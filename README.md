@@ -1,8 +1,9 @@
-# homebrewmenu
+# Description
 Simple 3DS homebrew menu made with Lua-Player-Plus 3DS.
 
 # Requirements
 1. Some sort of (userland) exploit to actually run it.
+2. lpp-3ds.3dsx, search up lpp-3ds to find it.
 
 # How to use
 Download all of the scripts and homebrewmenu.3dsx.
