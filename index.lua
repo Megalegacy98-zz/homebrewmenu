@@ -1,4 +1,3 @@
-Sound.init()
 username = System.getUsername()
 sysdetailmenu = 0
 homebrew = 0
